@@ -1,5 +1,5 @@
 
-describe 'Alerts', :random_field do
+describe 'Random field', :random_field do
 
     before(:each) do
         visit 'http://training-wheels-protocol.herokuapp.com/login2'
@@ -25,7 +25,6 @@ describe 'Alerts', :random_field do
         click_button 'Login'
 
         div_flash = find('#flash')
-
         expect(div_flash).to have_content 'Olá, Tony Stark. Você acessou a área logada!'
     end
 
