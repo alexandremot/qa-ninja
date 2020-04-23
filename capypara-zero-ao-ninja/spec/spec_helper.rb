@@ -24,4 +24,6 @@ Capybara.configure do |config|
   # define o tempo de espera padrão em que o Capybara aguarda
   # para o carregamento de um elemento específico
   config.default_max_wait_time = 5
+  # definida URL padrão para resumo de rotas nos cenários / suites
+  config.app_host = 'http://training-wheels-protocol.herokuapp.com'
 end

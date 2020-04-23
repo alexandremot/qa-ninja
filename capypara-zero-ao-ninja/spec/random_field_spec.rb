@@ -2,7 +2,7 @@
 describe 'Random field', :random_field do
 
     before(:each) do
-        visit 'http://training-wheels-protocol.herokuapp.com/login2'
+        visit '/login2'
     end
 
     it 'Random' do

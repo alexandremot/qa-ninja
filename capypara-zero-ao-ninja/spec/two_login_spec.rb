@@ -2,7 +2,7 @@
 describe 'Two login', :two_login do
 
     before(:each) do
-        visit 'http://training-wheels-protocol.herokuapp.com/access'
+        visit '/access'
     end
 
     it 'Teste pelo find "Form" pai seguido pelo campo Login' do

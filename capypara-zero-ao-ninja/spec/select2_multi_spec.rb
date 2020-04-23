@@ -3,7 +3,7 @@ describe 'Select2', :multi do
 
     describe('multiple') do
         before(:each) do
-            visit 'http://training-wheels-protocol.herokuapp.com/apps/select2/multi.html'
+            visit '/apps/select2/multi.html'
         end
 
         def seleciona_ator(nome_do_ator)

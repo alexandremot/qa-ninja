@@ -3,7 +3,7 @@ describe 'Select2', :single do
 
     describe('single') do
         before(:each) do
-            visit 'http://training-wheels-protocol.herokuapp.com/apps/select2/single.html'
+            visit '/apps/select2/single.html'
         end
 
         it 'seleciona ator por nome' do

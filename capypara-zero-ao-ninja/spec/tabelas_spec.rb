@@ -2,7 +2,7 @@
 describe 'Tabelas', :tables do
 
     before(:each) do
-        visit 'http://training-wheels-protocol.herokuapp.com/tables'
+        visit '/tables'
     end
     
     
