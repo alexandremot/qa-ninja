@@ -41,6 +41,11 @@ end
 
 Capybara.configure do |config|
   config.default_driver = :selenium_chrome
+
+  # para execução em modo headless, favor habilitar a linha
+  # abaixo (47) e comentar a linha 43
+  # config.default_driver = :selenium_chrome_headless
+
   # define o tempo de espera padrão em que o Capybara aguarda
   # para o carregamento de um elemento específico
   config.default_max_wait_time = 5
