@@ -17,6 +17,12 @@ RSpec.configure do |config|
   config.shared_context_metadata_behavior = :apply_to_host_groups
 
   config.include Capybara::DSL
+
+  # define configuração de resolução de janela para todos os cenários
+  config.before(:example) do
+      page.current_window.resize_to(1280, 800)
+  end
+
 end
 
 Capybara.configure do |config|
