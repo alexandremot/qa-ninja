@@ -1,5 +1,5 @@
 
-describe 'formularios' do
+describe 'formularios', :form do
 
     it 'login com sucesso' do
         visit "/login"

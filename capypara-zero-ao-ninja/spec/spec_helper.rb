@@ -23,6 +23,14 @@ RSpec.configure do |config|
       page.current_window.resize_to(1280, 800)
   end
 
+  config.after(:example) do |e|
+      # obtem o nome de cada cenário, remove caracteres especiais e
+      # substitui espaços por underline ( "_" )
+      nome_cenario =  e.description.gsub(/[^A-Za-z0-9]/, ' ').tr(' ', '_')
+      # gera e salva evidência com o respectivo nome do cenário
+      page.save_screenshot('log/' + nome_cenario + '.png')
+  end
+
 end
 
 Capybara.configure do |config|
