@@ -1,4 +1,3 @@
-
 describe 'Alerts', :alerts do
 
     before(:each) do
@@ -23,7 +22,9 @@ describe 'Alerts', :alerts do
 
 
     it 'Confirma Cancelar', :confirma_cancelar do
+
         click_button 'Confirma'
+
         mensagem = page.driver.browser.switch_to.alert.text
         expect(mensagem).to eql 'E ai confirma?'
 
@@ -40,13 +41,13 @@ describe 'Alerts', :alerts do
         expect(page).to have_content 'Olá, Alexandre'
     end
 
-    it 'Dismiss Prompt', :dismiss_prompt do
-        accept_prompt(with: '') do
-            click_button 'Cancelar'
-        end
+    # it 'Dismiss Prompt', :dismiss_prompt do
+    #    accept_prompt(with: '') do
+    #        click_button 'Cancelar'
+    #    end
 
-        expect(page).to have_content 'Olá, null'
-    end
+    #    expect(page).to have_content 'Olá, null'
+    #end
 
     after(:each) do
         sleep 2
