@@ -43,23 +43,29 @@ describe 'Tabelas', :tables do
     end
 
 
-    it 'deve selecionar o ator Chris Pratt para remoção', :chris_pratt_test do
-        chris_pratt_data = find('table tbody tr', text: 'Pratt')
+    it 'deve selecionar o ator Chris Pratt para remoção', :chris_pratt_remocao do
+        chris_pratt_data = find('table tbody tr', text: 'Chris Pratt')
 
-        a_delete = chris_pratt_data.find('a[class=delete]').click
+        chris_pratt_data.find('a', text: 'delete').click
 
         javascript_alert_text = page.driver.browser.switch_to.alert.text
-        expect(javascript_alert_text).to eql 'Chris Pratt foi selecionado para remoção!'
+        expect(javascript_alert_text).to include 'Chris Pratt foi selecionado'
+
+        # clica no botão OK
+        page.driver.browser.switch_to.alert.accept
     end
 
     
-    it 'deve selecionar o ator Chris Pratt para edição', :chris_pratt_edit_test do
+    it 'deve selecionar o ator Chris Pratt para edição', :chris_pratt_edicao do
         chris_pratt_data = find('table tbody tr', text: 'Pratt')
 
         a_edit = chris_pratt_data.find('a[class=edit]').click
 
         javascript_alert_text = page.driver.browser.switch_to.alert.text
         expect(javascript_alert_text).to eql 'Chris Pratt foi selecionado para edição!'
+
+        # clica no botão OK
+        page.driver.browser.switch_to.alert.accept
     end
 
 

@@ -27,8 +27,14 @@ RSpec.configure do |config|
       # obtem o nome de cada cenário, remove caracteres especiais e
       # substitui espaços por underline ( "_" )
       nome_cenario =  e.description.gsub(/[^A-Za-z0-9]/, ' ').tr(' ', '_')
+      
       # gera e salva evidência com o respectivo nome do cenário
       page.save_screenshot('log/' + nome_cenario + '.png')
+
+      # gera e salva evidência com o respectivo nome do cenário
+      # em *caso de falha* (e.exception)
+      # para habilitar esta funcionalidade, remova comentário da linha abaixo
+      # page.save_screenshot('log/' + nome_cenario + '.png') if e.exception
   end
 
 end
