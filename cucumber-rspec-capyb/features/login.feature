@@ -20,7 +20,7 @@ Funcionalidade: Login
   Cenário: Usuário
     Quando eu faço login com "hulk@stark.com" e senha "123"
     Então não devo ser autenticado
-    E devo ver a mensagem "usuário ou senha inválidos"
+    E devo ver a mensagem "Usuário e/ou senha inválidos"
 
 
   Cenário: Email não informado
