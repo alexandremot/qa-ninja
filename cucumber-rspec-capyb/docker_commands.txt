@@ -1,0 +1,23 @@
+
+# postgres
+docker run --name postgres_database --network=docker_lan -e "POSTGRES_PASSWORD=qaninja" -p 5432:5432 -v var/lib/postgresql/data -d postgres
+
+
+# postgres admin (pgadmin)
+docker run --name pgadmin --network=docker_lan -e "PGADMIN_DEFAULT_EMAIL=root@qaninja.io" -e "PGADMIN_DEFAULT_PASSWORD=qaninja" -p 15432:80 -d dpage/pgadmin4
+
+
+# nflix-api-users
+docker run --name nflix-api-users --network=docker_lan -e "DATABASE=postgres_database" -p 3001:3001 -d papitoio/nflix-api-users
+
+
+# nflix-api-movies
+docker run --name nflix-api-movies --network=docker_lan -e "DATABASE=postgres_database" -p 3002:3002 -d papitoio/nflix-api-movies
+
+
+# nflix-api-gateway
+docker run --name nflix-api-gateway --network=docker_lan -e "API_USERS=http://nflix-api-users:3001" -e "API_MOVIES=http://nflix-api-movies:3002" -p 3000:3000 -d papitoio/nflix-api-gateway
+
+
+# nflix-web
+docker run --name nflix-web --network=docker_lan -e "VUE_APP_API=http://localhost:3000" -p 8080:8080 -d papitoio/nflix-web

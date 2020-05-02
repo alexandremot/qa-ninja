@@ -6,19 +6,19 @@ Funcionalidade: Login
 
   @caminho_feliz
   Cenário: Acesso
-    Quando eu faço login
+    Quando eu faço login com "tony@stark.com" e senha "123"
     Então devo ser autenticado
     E o nome "Tony Stark" deverá ser exibido na tela
 
-
+  @senha_invalida
   Cenário: Senha inválida
-    Quando eu faço login com "tony@stark.com" e senha "stark123"
+    Quando eu faço login com "tony@stark.com" e senha "abcde"
     Então não devo ser autenticado
-    E devo ver a mensagem "usuário ou senha inválidos"
+    E devo ver a mensagem "Usuário e/ou senha inválidos"
 
 
   Cenário: Usuário
-    Quando eu faço login com "hulk@stark.com" e senha "stark123"
+    Quando eu faço login com "hulk@stark.com" e senha "123"
     Então não devo ser autenticado
     E devo ver a mensagem "usuário ou senha inválidos"
 
