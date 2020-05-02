@@ -1,4 +1,6 @@
 
+# Lista de comandos para configuração dos respectivos containers
+
 # postgres
 docker run --name postgres_database --network=docker_lan -e "POSTGRES_PASSWORD=qaninja" -p 5432:5432 -v var/lib/postgresql/data -d postgres
 
